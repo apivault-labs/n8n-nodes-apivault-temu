@@ -1,0 +1,56 @@
+{
+  "name": "n8n-nodes-apivault-temu",
+  "version": "0.1.0",
+  "description": "n8n community node for Temu Product Scraper — scrape Temu products with dropshipping intelligence: USD-normalized prices, sold count, demand score, profit margin, hot-product score, variants, Shopify CSV / Google Merchant export. No login. Pay-as-you-go, no monthly fee.",
+  "license": "MIT",
+  "homepage": "https://apify.com/apivault_labs/temu-product-scraper",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "temu",
+    "temu-scraper",
+    "temu-product-scraper",
+    "dropshipping",
+    "winning-products",
+    "profit-margin",
+    "shopify-csv",
+    "google-merchant-feed",
+    "product-research",
+    "ecommerce-scraper",
+    "apify"
+  ],
+  "author": {
+    "name": "apivault_labs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apivault-labs/n8n-nodes-apivault-temu.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && copyfiles \"nodes/**/*.svg\" dist",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ApifyApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Temu/Temu.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "copyfiles": "^2.4.1",
+    "n8n-workflow": "*",
+    "typescript": "^5.4.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
